@@ -1,0 +1,97 @@
+body,html{
+    margin: 0;
+    border: 0;
+}
+
+/*Header section*/
+header{
+    padding: 1.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header_icons{
+    width: 2.2em;
+}
+.header_icons:nth-child(2){
+    height: 1.5em;
+    width: 2.5em;
+}
+
+
+/*Main Scetion*/
+.profile-container{
+    text-align: center;
+    padding: 1em;
+    position: relative;
+    
+}
+
+
+.dog-char-transition {
+    transition: all 2s ease-in;
+}
+
+.overlay{
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    transform: translate(-50%, -50%) rotate(-50deg);
+    z-index: 1;
+    width: 10em;
+   
+}
+#disliked,
+#liked{
+     display: none
+}
+#profile-pic{
+    width: 100%;
+    border-radius: 5px;  
+}
+
+#profile-inner-text{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    padding-left: 1em;
+    padding-bottom: 1.5em;
+    text-align: left;
+    position: absolute;
+    bottom: 15%;
+    left: 2%;
+    width: 60%;
+    scroll-behavior:0;
+    margin-left: 1em;
+}
+
+#profile-inner-text p{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+    margin-bottom: 0.1em;
+    margin-top: 0.5em;
+}
+#profile-inner-text h1{
+    font-size: 2rem;
+    margin-bottom: 0.1em;
+}
+
+
+
+#btn-div{
+    padding: 1em;
+    letter-spacing: 1em;
+    text-align: center;
+    
+}
+
+#heart-btn,
+#cross-btn{
+    border-radius: 50%;
+    padding: 0.8em;
+   border: none;
+   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+
+
