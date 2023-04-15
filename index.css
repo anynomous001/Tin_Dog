@@ -94,4 +94,19 @@ header{
 }
 
 
-
+.lastMessage{
+    
+    font-size: 1.2rem;
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    color: whitesmoke;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 1);
+    /*justify-content: center;
+    align-items: center;*/
+    place-items:center;
+    margin: 0 auto;
+}
+.body{
+    background-color:  #FFB6C1;
+}

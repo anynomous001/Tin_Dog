@@ -9,69 +9,84 @@ import {Character} from  './Dog.js'
 
 
 
-/*const likeBtn = document.getElementById('heart-btn')
-const dislikeBtn = document.getElementById('cross-btn')*/
+const likeBtn = document.getElementById('heart-btn')
+const dislikeBtn = document.getElementById('cross-btn')
 
-
-
-
-
-function getNewDog(){
-    let nextDog = dogsData.shift()
-    return new Character(nextDog)
+function getNewDog() {
+  if (dogsData.length === 0) {
+      likeBtn.disabled = true
+      dislikeBtn.disabled = true
+    return null;
+  }
+  let nextDog = dogsData.shift();
+  return new Character(nextDog);
 }
 
+/*btnDiv.addEventListener('click', function(event){
+    dogChar.display(event.target.id)
+    
+    if(!dogChar.hasBeenLiked){
+            if(dogChar.hasBeenSwiped){
+                dogChar.hasBeenLiked = true
+                    setTimeout(function(){
+                    dogChar = getNewDog();
+                    render();
+                    dogChar.hasBeenLiked = false
+                }, 2000);
+                document.getElementById('heart-btn').disabled = false
+                document.getElementById('cross-btn').disabled = false
+            }
+    }
+})*/
 
-/*likeBtn.addEventListener('click',function(){
-    displayLike()
-    dogChar.hasBeenLiked= true
-    dislikeBtn.disabled = true
+
+likeBtn.addEventListener('click',function(event){
+    if(!dogChar.hasBeenSwiped){
+        dogChar.display(event.target.id)
+        
+        setTimeout(function() {
+                dogChar = getNewDog();
+                render();
+            }, 2000);
+            
+        setTimeout(function(){
+           dogChar.hasBeenSwiped = false
+        },3000)
+    }
 })
     
-dislikeBtn.addEventListener('click', function() {
-    displayDisLike();
-    dogChar.hasBeenSwiped = true;
-    likeBtn.disabled = true;
-    setTimeout(function() {
-        dogChar = getNewDog();
-        render();
-        document.getElementById('container').classList.add('dog-char-transition');
-    }, 2000);
-});*/
+dislikeBtn.addEventListener('click', function(event) {
+     if(!dogChar.hasBeenSwiped){
+        dogChar.display(event.target.id)
+        
+        setTimeout(function() {
+            dogChar = getNewDog();
+            render();
+        }, 2000);
+        
+        setTimeout(function(){
+           dogChar.hasBeenSwiped = false
+        },3000)
+   }
+});
 
 const container = document.getElementById('container');
 
 function render() {
-  // Fade out the current dogChar
-  container.classList.add('fade-out');
-
-  setTimeout(() => {
-    // Remove the current dogChar and add the new one
-    container.innerHTML = dogChar.renderHtml();
-    container.classList.remove('fade-out');
-    container.classList.add('fade-in');
-  }, 500);
-
-  setTimeout(() => {
-    container.classList.remove('fade-in');
-  }, 1000);
+    
+  if (dogChar === null) {
+      document.body.classList.add('body')
+   document.body.innerHTML = 
+                `<div class='lastMessage'>
+                    <h1>
+                       No more dogs to show!
+                    </h1>
+                </div>`
+                ;
+  }
+  container.innerHTML = dogChar.renderHtml();
 }
 
 let dogChar = getNewDog()
-
-const btnDiv = document.getElementById('btn-div')
-
-btnDiv.addEventListener('click', function(event){
-    dogChar.display(event.target.id)
-    if(dogChar.hasBeenSwiped){
-        document.getElementById('heart-btn').disabled = false
-        document.getElementById('cross-btn').disabled = false
-         setTimeout(function(){
-        dogChar = getNewDog();
-        render();
-        document.getElementById('container').classList.add('dog-char-transition');
-    }, 2000);
-    }
-})
 
 render()
