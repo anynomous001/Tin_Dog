@@ -1,11 +1,10 @@
-import {dogsData} from './data.js'
 
 
-export function displayLike(){
+export function displayLike() {
     const liked = document.getElementById('liked')
-    liked.style.display='block';
+    liked.style.display = 'block';
 }
-export function displayDisLike(){
+export function displayDisLike() {
     const disliked = document.getElementById('disliked')
-    disliked.style.display='block';  
+    disliked.style.display = 'block';
 }

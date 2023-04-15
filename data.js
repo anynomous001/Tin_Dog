@@ -1,7 +1,7 @@
 const dogsData = [
     {
         name: "Rex",
-        avatar: "https://images.unsplash.com/photo-1517849845537-4d257902454a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZG9nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60",
+        avatar: "images/dog-rex.jpg",
         age: 25,
         bio: "Art. Literature. Natural wine. Yoga.",
         hasBeenSwiped: false,
@@ -10,7 +10,7 @@ const dogsData = [
 
 ,{
         name: "Bella",
-        avatar: "https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZG9nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60",
+        avatar: "images/dog-bella.jpg",
         age: 43,
         bio: "Yup, that's my owner. U can meet him if you want",
         hasBeenSwiped: false,
@@ -18,7 +18,7 @@ const dogsData = [
     },
     {
         name: "Teddy",
-        avatar: "https://images.unsplash.com/photo-1586671267731-da2cf3ceeb80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8ZG9nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60",
+        avatar: "images/dog-teddy.jpg",
         age: 30,
         bio: "How you doin?",
         hasBeenSwiped: false,
